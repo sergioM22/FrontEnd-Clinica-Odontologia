@@ -1,0 +1,72 @@
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  
+    <!-- Position Column -->
+    <ng-container matColumnDef="idCita">
+      <th mat-header-cell *matHeaderCellDef> ID </th>
+      <td mat-cell *matCellDef="let element"> {{element.idCita}} </td>
+    </ng-container>
+  
+    <!-- Name Column -->
+    <ng-container matColumnDef="dni">
+      <th mat-header-cell *matHeaderCellDef> Dni </th>
+      <td mat-cell *matCellDef="let element"> {{element.dni}} </td>
+    </ng-container>
+  
+    <!-- Weight Column -->
+    <ng-container matColumnDef="peso">
+      <th mat-header-cell *matHeaderCellDef> peso </th>
+      <td mat-cell *matCellDef="let element"> {{element.peso}} </td>
+    </ng-container>
+  
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="altura">
+      <th mat-header-cell *matHeaderCellDef> altura </th>
+      <td mat-cell *matCellDef="let element"> {{element.altura}} </td>
+    </ng-container>
+    <!-- Symbol CAMPO PARA INTRODUCIR EL SEXO DEL USUARIO -->
+    <ng-container matColumnDef="sexo">
+        <th mat-header-cell *matHeaderCellDef> Sexo </th>
+        <td mat-cell *matCellDef="let element"> {{element.sexo}} </td>
+    </ng-container>
+    <!-- CAMPO PARA INTRODUCIR LA FECHA  -->
+    <ng-container matColumnDef="fecha">
+        <th mat-header-cell *matHeaderCellDef> Fecha </th>
+        <td mat-cell *matCellDef="let element"> {{element.fecha}} </td>
+    </ng-container>
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="estado">
+        <th mat-header-cell *matHeaderCellDef> estado </th>
+        <td mat-cell *matCellDef="let element"> {{element.estado}} </td>
+    </ng-container>
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="tipocita">
+        <th mat-header-cell *matHeaderCellDef> Tipo Cita</th>
+        <td mat-cell *matCellDef="let element"> {{element.tipocita.nombre}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="usuario">
+        <th mat-header-cell *matHeaderCellDef> Usuario </th>
+        <td mat-cell *matCellDef="let element"> {{element.usuario.nombre}} </td>
+      </ng-container>
+
+    <ng-container matColumnDef="editar-eliminar">
+    <th mat-header-cell *matHeaderCellDef> Editar-Eliminar </th>
+      <td mat-cell *matCellDef="let row">
+        <button mat-button color="primary"  (click)="openModal(row.idCita)">
+            <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-button color="warm" (click)="onDelete(row.idCita)">
+            <mat-icon>delete_forever</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <button mat-button color="primary"  (click)="openModal()" style="margin-left: 1150px;">
+    <mat-icon>persona_add</mat-icon>Agregar Médico
+  </button>
+
+  
