@@ -43,10 +43,10 @@ import { InstruccionesComponent } from './pages/user/instrucciones/instrucciones
 import { StartComponent } from './pages/user/start/start.component';
 import { NgxUiLoaderModule , NgxUiLoaderHttpModule } from "ngx-ui-loader";
 import { CitaComponent } from './pages/user/cita/cita.component';
-import { CitaModalComponent } from './pages/user/cita/cita-modal/cita-modal.component';
+import {MatTableModule} from '@angular/material/table';
 import { ConfirmDialogComponent } from './pages/user/cita/confirm-dialog/confirm-dialog.component';
-import { MatTableModule } from '@angular/material/table';
 import { MatDialogModule } from '@angular/material/dialog';
+import { CitaModalComponent } from './pages/user/cita/cita-modal/cita-modal.component';
 
 @NgModule({
   declarations: [
@@ -73,18 +73,18 @@ import { MatDialogModule } from '@angular/material/dialog';
     InstruccionesComponent,
     StartComponent,
     CitaComponent,
-    CitaModalComponent,
-    ConfirmDialogComponent
+    ConfirmDialogComponent,
+    CitaModalComponent
   ],
   imports: [
-    MatTableModule,
-    MatDialogModule,
     BrowserModule,
     AppRoutingModule,
+    MatTableModule,
     BrowserAnimationsModule,
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
+    MatDialogModule,
     FormsModule,
     HttpClientModule,
     MatSnackBarModule,

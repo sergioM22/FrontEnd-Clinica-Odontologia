@@ -9,7 +9,12 @@ import { Subject} from 'rxjs';
 export class CitaService {
   citaActualizar = new Subject<Cita[]>();
 
-
+  private url: string= 'http://localhost:8080/citas';
+  constructor(private http: HttpClient) { }
+  
+  listar(){
+    return this.http.get<Cita[]>(this.url+"/");
+  }
   eliminar(id:number){
     return this.http.delete(`${this.url}/${id}`)
   }
@@ -17,13 +22,10 @@ export class CitaService {
     return this.http.put(this.url, cita);
   }
   registrar(cita: Cita){
+
     return this.http.post(this.url, cita);
   }
-
-  private url: string= 'http://localhost:8080/citas';
-  constructor(private http: HttpClient) { }
-
-  listar(){
-    return this.http.get<Cita[]>(this.url);
+  listarPorId(id:number){
+    return this.http.get<Cita>(`${this.url}/${id}`);
   }
 }

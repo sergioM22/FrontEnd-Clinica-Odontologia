@@ -8,10 +8,10 @@ import { Usuario } from '../model/usuario';
 })
 export class UserService {
   //adaptacion S.Y 20231028
-  private url: string= 'http://localhost:8080/usuarios';
-  listar(){
-    return this.httpClient.get<Usuario[]>(this.url);
-  }
+    private url: string= 'http://localhost:8080/usuarios';
+    listar(){
+      return this.httpClient.get<Usuario[]>(this.url+"/");
+    }
   //fin adaptacion
     constructor(private httpClient: HttpClient) { }
 

@@ -6,11 +6,11 @@ import { TipoCita } from '../model/tipocita';
   providedIn: 'root'
 })
 export class tipocitaService {
-  private url: string= 'http://localhost:8080/tipocitas';
+  private url: string= 'http://localhost:8080/tipocita';
   
   constructor(private http:HttpClient) { }
 
   listar(){
-    return this.http.get<TipoCita[]>(this.url);
+    return this.http.get<TipoCita[]>(this.url+"/");
   }
 }

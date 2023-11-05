@@ -15,23 +15,25 @@ import { TipoCita } from 'src/app/model/tipocita';
 export class CitaComponent implements OnInit {
   displayedColumns: string[] = ['idCita', 'dni', 'peso', 'altura', 'sexo','fecha','estado','tipocita','usuario','editar-eliminar'];
   dataSource: MatTableDataSource<Cita>;
-  
   tipocita ?: TipoCita[];
 
   constructor(
     private dialog: MatDialog,
-    private citaService: CitaService
-    ) {
-    //this.dataSource = new MatTableDataSource<Cita>([]); // Inicializa dataSource con un arreglo vacío
-  }
+    private citaService: CitaService) {}
 
   ngOnInit(): void {
+    this.citaService.citaActualizar.subscribe(data => {
+      this.dataSource = new MatTableDataSource(data);
+    })
+
     this.citaService.listar().subscribe(data => {
       this.dataSource = new MatTableDataSource(data); 
     });
   }
   openModal(cita?: Cita){
+    
     let cit = cita != null ? cita : new Cita();
+    console.log("PASANDO ID: "+cit)
     this.dialog.open(CitaModalComponent,{
       width:"260px",
       data: cit
