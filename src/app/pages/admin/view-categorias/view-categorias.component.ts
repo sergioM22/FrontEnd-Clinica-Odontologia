@@ -1,6 +1,8 @@
 import  Swal  from 'sweetalert2';
 import { CategoriaService } from './../../../services/categoria.service';
 import { Component, OnInit } from '@angular/core';
+import { TipoCita } from 'src/app/model/tipocita';
+import { tipocitaService } from 'src/app/services/tipocita.service';
 
 @Component({
   selector: 'app-view-categorias',
@@ -9,21 +11,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewCategoriasComponent implements OnInit {
 
-  categorias:any = [
+  listaTipos:TipoCita[] = []
 
-  ]
-
-  constructor(private categoriaService:CategoriaService) { }
+  constructor(private tipo: tipocitaService) { }
 
   ngOnInit(): void {
-    this.categoriaService.listarCategorias().subscribe(
+    this.tipo.listar().subscribe(
       (dato:any) => {
-        this.categorias = dato;
-        console.log(this.categorias);
+        this.listaTipos = dato;
+        console.log(this.listaTipos);
       },
       (error) => {
         console.log(error);
-        Swal.fire('Error !!','Error al cargar las categorías','error');
+        Swal.fire('Error !!','Error al cargar los tipos de servicio','error');
       }
     )
   }
