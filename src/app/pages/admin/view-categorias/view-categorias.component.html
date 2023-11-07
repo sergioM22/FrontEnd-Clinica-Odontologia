@@ -3,13 +3,30 @@
     <div mat-subheader>
       Departamentos Activos:
     </div>
-    <mat-list-item *ngFor = "let c of categorias">
+     <mat-list-item *ngFor = "let item of listaTipos">
       <mat-icon mat-list-icon>category</mat-icon>
-      <div mat-line>{{ c.titulo }}</div>
-      <div mat-line>{{ c.descripcion }}</div>
+      <!-- <div mat-line>{{ item.idTipoCita }}</div> -->
+      <div mat-line>{{ item.nombre }}</div>
       <mat-divider></mat-divider>
     </mat-list-item>
-  </mat-list>
+  </mat-list> 
+
+  <!--  <div class="container mt-3">
+    <table class="table table-dark">
+    <thead>
+        <tr>
+        <th class="text-center">Codigo</th>
+        <th class="text-center">Nombre</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of listaTipos">
+        <td class="text-center">{{item.idTipoCita}}</td>
+        <td class="text-center">{{item.nombre}}</td>
+        </tr>
+    </tbody>
+    </table>
+</div> -->
 
   <div class="container text-center mt20">
     <button routerLink="/admin/add-categoria" mat-raised-button color="primary">Nuevo</button>
