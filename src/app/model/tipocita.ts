@@ -1,5 +1,9 @@
 export class TipoCita{
-    idTipoCita?: number = 0;
+
+    idTipoCita: number;
+
+    idTipoCita: number = 0;
+
     nombre?: string;
 
     constructor(cod:number, nom:string) {

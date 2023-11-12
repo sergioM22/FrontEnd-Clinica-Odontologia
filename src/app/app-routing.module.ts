@@ -21,6 +21,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ActualizarExamenComponent } from './pages/admin/actualizar-examen/actualizar-examen.component';
 import { CitaComponent } from './pages/user/cita/cita.component';
+import { ChatComponent } from './pages/chat/chat.component';
+ 
 
 const routes: Routes = [
   {
@@ -38,6 +40,8 @@ const routes: Routes = [
     component : LoginComponent,
     pathMatch : 'full'
   },
+  { path: 'chat', component: ChatComponent, pathMatch: 'full' },
+  //{ path: 'user', component: UserDashboardComponent, pathMatch: 'full' },
   {
     path : 'citaspendientes',
     component : CitaComponent,
@@ -102,7 +106,7 @@ const routes: Routes = [
       {
         path:'instrucciones/:examenId',
         component:InstruccionesComponent
-      }
+      },
     ]
   },
   {

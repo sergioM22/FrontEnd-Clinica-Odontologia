@@ -47,10 +47,18 @@ import {MatTableModule} from '@angular/material/table';
 import { ConfirmDialogComponent } from './pages/user/cita/confirm-dialog/confirm-dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { CitaModalComponent } from './pages/user/cita/cita-modal/cita-modal.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
+//chat
+ import { ChatComponent } from './pages/chat/chat.component';
+// import { UserComponent } from './pages/Chat/user/user.component';
+// import { MainComponent } from './pages/Chat/main/main.component';
 @NgModule({
   declarations: [
     AppComponent,
+    ChatComponent,
+    // UserComponent,
+    // MainComponent,
     NavbarComponent,
     SignupComponent,
     LoginComponent,
@@ -77,6 +85,7 @@ import { CitaModalComponent } from './pages/user/cita/cita-modal/cita-modal.comp
     CitaModalComponent
   ],
   imports: [
+    ReactiveFormsModule,
     BrowserModule,
     AppRoutingModule,
     MatTableModule,

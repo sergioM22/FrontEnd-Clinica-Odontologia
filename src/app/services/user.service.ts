@@ -14,9 +14,13 @@ export class UserService {
     }
   //fin adaptacion
     constructor(private httpClient: HttpClient) { }
-
+    getAll() {
+      return this.httpClient.get<Usuario[]>(this.url + "/")
+    }
     public añadirUsuario(user:any){
       return this.httpClient.post(`${baserUrl}/usuarios/`,user);
     }
-
+    public añadirMedico(user:any){
+      return this.httpClient.post(`${baserUrl}/usuarios/registrarMedico/`,user);
+    }
 }
