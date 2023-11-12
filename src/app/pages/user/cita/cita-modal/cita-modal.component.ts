@@ -40,7 +40,6 @@ export class CitaModalComponent implements OnInit {
         // } else {
         //   console.log('La cita no fue encontrada');
         // }
-        //
       })
 
       

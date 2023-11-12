@@ -11,6 +11,11 @@ export class tipocitaService {
   constructor(private http:HttpClient) { }
 
   listar(){
-    return this.http.get<TipoCita[]>(this.url+"/");
+    return this.http.get<TipoCita[]>(this.url);
   }
+
+  public agregarTipo(bean:TipoCita){
+    return this.http.post(`${this.url}/registrar/`,bean);
+  }
+
 }

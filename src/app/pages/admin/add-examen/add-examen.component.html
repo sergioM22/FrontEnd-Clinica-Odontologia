@@ -2,68 +2,41 @@
   <h1 style="text-align: center;">Creación de nuevo Médico</h1>
   <div class="row">
     <div class="col-md-8 offset-md-2">
-      <form (ngSubmit) = "guardarCuestionario()">
-        <mat-form-field class="w100" appearance="fill">
+      <form>
+        <mat-form-field appearance="fill">
+          <mat-label>Nombre Usuario</mat-label>
+          <input matInput placeholder="Ingresa el Nombre Usuario" [(ngModel)]="usuario.username">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Contraseña</mat-label>
+          <input matInput placeholder="Contraseña" [(ngModel)]="usuario.password">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
           <mat-label>Nombre</mat-label>
-          <input
-          [(ngModel)] = "examenData.titulo"
-          type="text"
-          name="titulo"
-          required
-          placeholder="Digite el nombre del Médico"
-          matInput>
+          <input matInput placeholder="Nombre" [(ngModel)]="usuario.nombre">
         </mat-form-field>
-        <mat-form-field class="w100" appearance="fill">
-          <mat-label>Descripción</mat-label>
-          <textarea
-          [(ngModel)] = "examenData.descripcion"
-          type="text"
-          name="descripcion"
-          placeholder="Digite la descripción"
-          matInput
-          rows="8"></textarea>
+        <mat-form-field appearance="fill">
+          <mat-label>Apellido</mat-label>
+          <input matInput placeholder="Apellido" [(ngModel)]="usuario.apellido">
         </mat-form-field>
-
-        <div class="row">
-          <div class="col-md-6">
-            <mat-form-field class="w100" appearance="fill">
-              <mat-label>Correo</mat-label>
-              <input
-              [(ngModel)] = "examenData.puntosMaximos"
-              type="text"
-              name="puntosMaximos"
-              placeholder="Digite el correo"
-              matInput>
-            </mat-form-field>
-          </div>
-          <div class="col-md-6">
-            <mat-form-field class="w100" appearance="fill">
-              <mat-label>Edad</mat-label>
-              <input
-              [(ngModel)] = "examenData.numeroDePreguntas"
-              type="text"
-              name="numeroDePreguntas"
-              placeholder="Digite la Edad del Médico"
-              matInput>
-            </mat-form-field>
-          </div>
-        </div>
-
-        <mat-slide-toggle class="mt20" name = "activo" [(ngModel)] = "examenData.activo" color="primary">
-          Estado de actividad
-        </mat-slide-toggle>
-
-        <mat-form-field appearance="fill" class="mt20 w100">
-          <mat-label>Departamento/Servicio</mat-label>
-          <mat-select name="categoria" [(ngModel)] = "examenData.categoria.categoriaId">
-            <mat-option *ngFor = "let c of categorias" [value] = "c.categoriaId">
-              {{ c.titulo }}
-            </mat-option>
-          </mat-select>
+        <mat-form-field appearance="fill">
+          <mat-label>Email</mat-label>
+          <input matInput placeholder="Email" [(ngModel)]="usuario.email">
         </mat-form-field>
-
+        <mat-form-field appearance="fill">
+          <mat-label>Telefono</mat-label>
+          <input matInput placeholder="Telefono" [(ngModel)]="usuario.telefono">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Perfil</mat-label>
+          <input matInput placeholder="Perfil" [(ngModel)]="usuario.perfil">
+        </mat-form-field>
+      
+        
         <div class="container text-center">
-          <button mat-raised-button color="primary">Guardar</button>
+          <button mat-button color="primary" (click)="aceptar()">
+          Aceptar
+          </button>
         </div>
       </form>
     </div>

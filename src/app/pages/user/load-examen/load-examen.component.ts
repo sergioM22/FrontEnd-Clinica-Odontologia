@@ -18,34 +18,34 @@ export class LoadExamenComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-      this.route.params.subscribe((params) => {
-        this.catId = params['catId'];
+      // this.route.params.subscribe((params) => {
+      //   this.catId = params['catId'];
 
-        if(this.catId == 0){
-          console.log("Cargando todos los exámenes");
-          this.examenService.obtenerExamenesActivos().subscribe(
-            (data) => {
-              this.examenes = data;
-              console.log(this.examenes);
-            },
-            (error) => {
-              console.log(error);
-            }
-          )
-        }
-        else{
-          console.log("Cargando un examen en específico");
-          this.examenService.obtenerExamenesActivosDeUnaCategoria(this.catId).subscribe(
-            (data:any) => {
-              this.examenes = data;
-              console.log(this.examenes);
-            },
-            (error) => {
-              console.log(error);
-            }
-          )
-        }
-      })
+      //   if(this.catId == 0){
+      //     console.log("Cargando todos los exámenes");
+      //     this.examenService.obtenerExamenesActivos().subscribe(
+      //       (data) => {
+      //         this.examenes = data;
+      //         console.log(this.examenes);
+      //       },
+      //       (error) => {
+      //         console.log(error);
+      //       }
+      //     )
+      //   }
+      //   else{
+      //     console.log("Cargando un examen en específico");
+      //     this.examenService.obtenerExamenesActivosDeUnaCategoria(this.catId).subscribe(
+      //       (data:any) => {
+      //         this.examenes = data;
+      //         console.log(this.examenes);
+      //       },
+      //       (error) => {
+      //         console.log(error);
+      //       }
+      //     )
+      //   }
+      // })
   }
 
 }

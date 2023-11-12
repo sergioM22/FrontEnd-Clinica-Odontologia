@@ -10,6 +10,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
+
+
   loginData = {
     "username" : '',
     "password" : '',
@@ -47,12 +49,14 @@ export class LoginComponent implements OnInit {
             //dashboard admin
             //window.location.href = '/admin';
             this.router.navigate(['admin']);
+            sessionStorage.setItem("username", this.loginData.username.trim());
             this.loginService.loginStatusSubjec.next(true);
           }
           else if(this.loginService.getUserRole() == 'NORMAL'){
             //user dashboard
             //window.location.href = '/user-dashboard';
             this.router.navigate(['user-dashboard/0']);
+            sessionStorage.setItem("username", this.loginData.username.trim());
             this.loginService.loginStatusSubjec.next(true);
           }
           else{

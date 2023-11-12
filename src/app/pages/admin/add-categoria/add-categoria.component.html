@@ -11,24 +11,12 @@
               required
               autofocus
               type="text"
-              name="titulo"
+              name="nombre"
               matInput
-              placeholder="Digite el nombre del Departamento"
+              placeholder="Digite el título de la categoría"
               [(ngModel)] = "categoria.titulo"
               >
             </mat-form-field>
-            <mat-form-field class="w100" appearance="outline">
-              <mat-label>Descripción</mat-label>
-              <textarea
-              name="descripcion"
-              matInput
-              placeholder="Digite la descripción de la categoría"
-              rows="15"
-              [(ngModel)] = "categoria.descripcion"
-              >
-              </textarea>
-            </mat-form-field>
-
             <div class="container text-center mt15">
               <button mat-raised-button color="primary">Guardar</button>
             </div>

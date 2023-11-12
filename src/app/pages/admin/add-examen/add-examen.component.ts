@@ -1,9 +1,10 @@
 import { Router } from '@angular/router';
-import { ExamenService } from './../../../services/examen.service';
+import { ExamenService } from '../../../services/examen.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import  Swal  from 'sweetalert2';
-import { CategoriaService } from './../../../services/categoria.service';
+import { UserService } from 'src/app/services/user.service';
 import { Component, OnInit } from '@angular/core';
+import { Usuario } from 'src/app/model/usuario';
 
 @Component({
   selector: 'app-add-examen',
@@ -12,66 +13,45 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddExamenComponent implements OnInit {
 
-  categorias:any = [];
-
-  examenData = {
-    titulo:'',
-    descripcion:'',
-    puntosMaximos:'',
-    numeroDePreguntas:'',
-    activo:true,
-    categoria:{
-      categoriaId:''
-    }
-  }
+  usuario: Usuario;
 
   constructor(
-    private categoriaService:CategoriaService,
-    private snack:MatSnackBar,
-    private examenService:ExamenService,
-    private router:Router) { }
+    private userService : UserService
+    ) { }
 
   ngOnInit(): void {
-    this.categoriaService.listarCategorias().subscribe(
-      (dato:any) => {
-        this.categorias = dato;
-        console.log(this.categorias);
-      },(error) => {
-        console.log(error);
-        Swal.fire('Error !!','Error al cargar los datos','error');
-      }
-    )
+    // this.categoriaService.listarCategorias().subscribe(
+    //   (dato:any) => {
+    //     this.categorias = dato;
+    //     console.log(this.categorias);
+    //   },(error) => {
+    //     console.log(error);
+    //     Swal.fire('Error !!','Error al cargar los datos','error');
+    //   }
+    // )
   }
 
-  guardarCuestionario(){
-    console.log(this.examenData);
-    if(this.examenData.titulo.trim() == '' || this.examenData.titulo == null){
-      this.snack.open('El título es requerido','',{
-        duration:3000
-      });
-      return ;
-    }
-
-    this.examenService.agregarExamen(this.examenData).subscribe(
-      (data) => {
-        console.log(data);
-        Swal.fire('Examen guardado','El examen ha sido guardado con éxito','success');
-        this.examenData = {
-          titulo : '',
-          descripcion : '',
-          puntosMaximos : '',
-          numeroDePreguntas : '',
-          activo:true,
-          categoria:{
-            categoriaId:''
-          }
-        }
-        this.router.navigate(['/admin/examenes']);
-      },
-      (error) => {
-        Swal.fire('Error','Error al guardar el examen','error');
-      }
-    )
+  aceptar(){
+    console.log(this.usuario);
+    
+    this.userService.añadirMedico(this.usuario).subscribe(()=>{
+    })
+    // if(this.usuario != null && this.usuario.idUsuario!>0)
+    // {
+    //   this.userService.editar(this.usuario).subscribe(()=>{
+    //     return this.userService.listar().subscribe(data=>{
+    //       this.userService.usuarioActualizar.next(data);
+    //     })
+    //   })
+    // }
+    // else{
+    //   this.userService.registrar(this.usuario).subscribe(()=>{
+    //     this.userService.listar().subscribe(data =>{
+    //       this.userService.usuarioActualizar.next(data);
+    //     })
+    //   })
+    // }
+   
   }
 
 }
