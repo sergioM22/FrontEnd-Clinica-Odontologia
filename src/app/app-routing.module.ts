@@ -17,12 +17,13 @@ import { DashboardComponent } from './pages/admin/dashboard/dashboard.component'
 import { LoginComponent } from './pages/login/login.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { HomeComponent } from './pages/home/home.component';
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ActualizarExamenComponent } from './pages/admin/actualizar-examen/actualizar-examen.component';
 import { CitaComponent } from './pages/user/cita/cita.component';
 import { ChatComponent } from './pages/chat/chat.component';
- 
+import { UserDashboardCliComponent } from './pages/user_cli/user-dashboard-cli/user-dashboard-cli.component';
+import { WelcomeCliComponent } from './pages/user_cli/welcome-cli/welcome-cli.component';
 
 const routes: Routes = [
   {
@@ -108,6 +109,17 @@ const routes: Routes = [
         component:InstruccionesComponent
       },
     ]
+  },
+  {
+path : 'user-dasboard_cli',
+component:UserDashboardCliComponent,
+canActivate:[NormalGuard],
+children: [
+  {
+  path:'',
+  component:WelcomeCliComponent
+  }
+]
   },
   {
     path:"start/:examenId",

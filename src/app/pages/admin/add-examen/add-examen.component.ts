@@ -13,10 +13,20 @@ import { Usuario } from 'src/app/model/usuario';
 })
 export class AddExamenComponent implements OnInit {
 
-  usuario: Usuario;
+  //usuario: Usuario;
+
+  public usuario = {
+    username : '',
+    password : '',
+    nombre : '',
+    apellido : '',
+    email : '',
+    telefono : ''
+  }
 
   constructor(
-    private userService : UserService
+    private userService : UserService,
+    private snack:MatSnackBar
     ) { }
 
   ngOnInit(): void {
@@ -30,6 +40,32 @@ export class AddExamenComponent implements OnInit {
     //   }
     // )
   }
+
+  formSubmit(){
+    console.log(this.usuario);
+    if(this.usuario.username == '' || this.usuario.username == null){
+       this.snack.open('Es necesario ingresar el nombre de usuario','Aceptar',{
+        duration : 3000,
+        verticalPosition : 'top',
+        horizontalPosition : 'right'
+       });
+      return;
+    }
+    
+    this.userService.añadirMedico(this.usuario).subscribe(
+      (data) => {
+        console.log(data);
+        Swal.fire('Medico guardado','Medico registrado con exito en el sistema','success');
+      },(error) => {
+        console.log(error);
+        this.snack.open('Ha ocurrido un error en el sistema !!','Aceptar',{
+          duration : 3000
+        });
+      }
+    )
+
+  }  
+
 
   aceptar(){
     console.log(this.usuario);

@@ -1,0 +1,25 @@
+<mat-card>
+    <mat-action-list>
+      <div mat-subheader>Menú</div>
+      <div *ngFor="let presentation of alluser" class="user col-2" (click)="goToChat(presentation.userName)">
+        <div *ngIf="presentation.userName != check">
+          {{presentation.userName}}
+        </div>
+      </div>
+      <button mat-list-item routerLink = "/chat">
+        <mat-icon mat-list-icon>quiz</mat-icon>Asesoria Medica
+      </button>
+      <button mat-list-item routerLink = "/citaspendientes">
+        <mat-icon mat-list-icon>quiz</mat-icon>Citas Agendadas
+      </button>
+      <button mat-list-item routerLink = "/citaspendientes">
+        <mat-icon mat-list-icon>quiz</mat-icon>Citas En Espera
+      </button>
+      <button mat-list-item routerLink = "/citaspendientes">
+        <mat-icon mat-list-icon>quiz</mat-icon>Citas Finalizadas
+      </button>
+      <button [routerLink] = "'/user-dashboard/'+c.categoriaId" mat-list-item *ngFor = "let c of categorias">
+        <mat-icon mat-list-icon>account_circle</mat-icon> {{ c.titulo }}
+      </button>
+    </mat-action-list>
+  </mat-card>

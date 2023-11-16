@@ -1,6 +1,6 @@
 <mat-card>
   <mat-action-list>
-    <div mat-subheader>Menú de Navegecion</div>
+    <div mat-subheader>Menú</div>
     <div *ngFor="let presentation of alluser" class="user col-2" (click)="goToChat(presentation.userName)">
       <div *ngIf="presentation.userName != check">
         {{presentation.userName}}
