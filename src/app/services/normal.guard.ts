@@ -19,6 +19,10 @@ export class NormalGuard implements CanActivate {
         return true;
       }
 
+      if(this.loginService.isLoggedIn() && this.loginService.getUserRole() == 'CLIENTE'){
+        return true;
+      }
+
       this.router.navigate(['login']);
       return false;
   }

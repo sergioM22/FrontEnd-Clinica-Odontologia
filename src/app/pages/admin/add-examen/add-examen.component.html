@@ -2,41 +2,42 @@
   <h1 style="text-align: center;">Creación de nuevo Médico</h1>
   <div class="row">
     <div class="col-md-8 offset-md-2">
-      <form>
+      <form (ngSubmit)="formSubmit()">
         <mat-form-field appearance="fill">
           <mat-label>Nombre Usuario</mat-label>
-          <input matInput placeholder="Ingresa el Nombre Usuario" [(ngModel)]="usuario.username">
+          <input required matInput placeholder="Ingresa el Nombre Usuario" [(ngModel)]="usuario.username" name="username">
         </mat-form-field>
         <mat-form-field appearance="fill">
           <mat-label>Contraseña</mat-label>
-          <input matInput placeholder="Contraseña" [(ngModel)]="usuario.password">
+          <input matInput placeholder="Contraseña" [(ngModel)]="usuario.password" name="password">
         </mat-form-field>
         <mat-form-field appearance="fill">
           <mat-label>Nombre</mat-label>
-          <input matInput placeholder="Nombre" [(ngModel)]="usuario.nombre">
+          <input matInput placeholder="Nombre" [(ngModel)]="usuario.nombre" name="nombre">
         </mat-form-field>
         <mat-form-field appearance="fill">
           <mat-label>Apellido</mat-label>
-          <input matInput placeholder="Apellido" [(ngModel)]="usuario.apellido">
+          <input matInput placeholder="Apellido" [(ngModel)]="usuario.apellido" name="apellido">
         </mat-form-field>
         <mat-form-field appearance="fill">
           <mat-label>Email</mat-label>
-          <input matInput placeholder="Email" [(ngModel)]="usuario.email">
+          <input matInput placeholder="Email" [(ngModel)]="usuario.email" name="email">
         </mat-form-field>
         <mat-form-field appearance="fill">
           <mat-label>Telefono</mat-label>
-          <input matInput placeholder="Telefono" [(ngModel)]="usuario.telefono">
+          <input matInput placeholder="Telefono" [(ngModel)]="usuario.telefono" name="telefono">
         </mat-form-field>
-        <mat-form-field appearance="fill">
-          <mat-label>Perfil</mat-label>
+
+       <!-- <mat-form-field appearance="fill">
+        <mat-label>Perfil</mat-label>
           <input matInput placeholder="Perfil" [(ngModel)]="usuario.perfil">
-        </mat-form-field>
+        </mat-form-field>-->
       
         
         <div class="container text-center">
-          <button mat-button color="primary" (click)="aceptar()">
-          Aceptar
-          </button>
+       <!--   <button mat-button color="primary" (click)="aceptar()">-->
+        <button mat-button color="primary" >Aceptar</button>
+          
         </div>
       </form>
     </div>
