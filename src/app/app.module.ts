@@ -80,6 +80,12 @@ import { BuyProductComponent } from './Cart/buy-product/buy-product.component';
 import { AddNewProductComponent } from './Cart/add-new-product/add-new-product.component';
 
 import { MatMenuModule } from '@angular/material/menu';
+import { CitaComponentEspera } from './pages/user/citaEspera/cita.espera.component';
+import { CitaEsperaModalComponent } from './pages/user/citaEspera/cita-modal/cita-espera-modal.component';
+import { ConfirmDialogEsperaComponent } from './pages/user/citaEspera/confirm-dialog/confirm-dialog-espera.component';
+import { CitaCompletadoComponent } from './pages/user/citaCompletado/cita.completado.component';
+import { CitaCompletadoModalComponent } from './pages/user/citaCompletado/cita-modal/cita-completado-modal.component';
+import { CompletadoConfirmDialogComponent } from './pages/user/citaCompletado/confirm-dialog/completado-confirm-dialog.component';
 
 @NgModule({
   declarations: [
@@ -87,17 +93,23 @@ import { MatMenuModule } from '@angular/material/menu';
     ChatComponent,
     //Cart
     HomeComponentCard,
+    CitaCompletadoComponent,
+    CitaCompletadoModalComponent,
+    CompletadoConfirmDialogComponent,
     HeaderComponent,
     ShowProductImagesDialogComponent,
     ShowProductDetailsComponent,
     ProductViewDetailsComponent,
     OrderDetailsComponent,
+    ConfirmDialogEsperaComponent,
+    CitaEsperaModalComponent,
     OrderConfirmationComponent,
     MyOrdersComponent,
     ForbiddenComponent,
     CartComponent,
     BuyProductComponent,
     AddNewProductComponent,
+    CitaComponentEspera,
     // UserComponent,
     // MainComponent,
     NavbarComponent,

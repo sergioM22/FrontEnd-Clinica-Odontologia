@@ -45,6 +45,8 @@ import { CitaCliComponent } from './pages/user_cli/cita-cli/cita-cli.component';
 import { ForbiddenComponent } from './Cart/forbidden/forbidden.component';
 
 import { MedicoGuard } from './services/medico.guard';
+import { CitaComponentEspera } from './pages/user/citaEspera/cita.espera.component';
+import { CitaCompletadoComponent } from './pages/user/citaCompletado/cita.completado.component';
 
 const routes: Routes = [
   {
@@ -127,6 +129,14 @@ const routes: Routes = [
         { path: 'chat', component: ChatComponent },
         {
           path : 'citaspendientes', component : CitaComponent
+          
+        },
+        {
+          path : 'citasEspera', component : CitaComponentEspera
+          
+        },
+        {
+          path : 'citasCompletado', component : CitaCompletadoComponent
           
         },
       {

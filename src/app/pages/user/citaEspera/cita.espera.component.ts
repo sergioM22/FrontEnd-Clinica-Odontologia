@@ -2,17 +2,17 @@ import { Component, OnInit } from '@angular/core';
 import { Cita } from 'src/app/model/cita';
 import { CitaService } from 'src/app/services/cita.service';
 import { MatTableDataSource } from '@angular/material/table';
-import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component';
+import { ConfirmDialogEsperaComponent } from './confirm-dialog/confirm-dialog-espera.component';
 import { MatDialog } from '@angular/material/dialog';
-import { CitaModalComponent } from './cita-modal/cita-modal.component';
+import { CitaEsperaModalComponent } from './cita-modal/cita-espera-modal.component';
 import { TipoCita } from 'src/app/model/tipocita';
 
 @Component({
-  selector: 'app-cita',
-  templateUrl: './cita.component.html',
-  styleUrls: ['./cita.component.css']
+  selector: 'app-cita-espera',
+  templateUrl: './cita.espera.component.html',
+  styleUrls: ['./cita.espera.component.css']
 })
-export class CitaComponent implements OnInit {
+export class CitaComponentEspera implements OnInit {
   displayedColumns: string[] = ['idCita', 'dni', 'peso', 'altura', 'sexo','fecha','estado','tipocita','usuario','editar-eliminar'];
   dataSource: MatTableDataSource<Cita>;
   tipocita ?: TipoCita[];
@@ -26,7 +26,7 @@ export class CitaComponent implements OnInit {
       this.dataSource = new MatTableDataSource(data);
     })
 
-    this.citaService.listarCitasPendientes().subscribe(data => {
+    this.citaService.listarCitasEspera().subscribe(data => {
       this.dataSource = new MatTableDataSource(data); 
     });
   }
@@ -34,20 +34,20 @@ export class CitaComponent implements OnInit {
     
     let cit = cita != null ? cita : new Cita();
     console.log("PASANDO ID: "+cit)
-    this.dialog.open(CitaModalComponent,{
+    this.dialog.open(CitaEsperaModalComponent,{
       width:"260px",
       data: cit
     })
   }
   onDelete(id:number){
 
-    let dialogRef = this.dialog.open(ConfirmDialogComponent,{
+    let dialogRef = this.dialog.open(ConfirmDialogEsperaComponent,{
     });
 
     dialogRef.afterClosed().subscribe(estado => {
       if(estado){
         this.citaService.eliminar(id).subscribe(()=>{
-          this.citaService.listarCitasPendientes().subscribe(data =>{
+          this.citaService.listar().subscribe(data =>{
             this.dataSource = new MatTableDataSource(data);
           })
         })

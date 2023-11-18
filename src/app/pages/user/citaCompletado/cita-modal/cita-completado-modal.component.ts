@@ -9,16 +9,16 @@ import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-cita-modal',
-  templateUrl: './cita-modal.component.html',
-  styleUrls: ['./cita-modal.component.css']
+  templateUrl: './cita-completado-modal.component.html',
+  styleUrls: ['./cita-completado-modal.component.css']
 })
-export class CitaModalComponent implements OnInit {
+export class CitaCompletadoModalComponent implements OnInit {
   // cita: Cita = new Cita();
   cita: Cita;
   tipocita: TipoCita[];
   usuario : Usuario[];
   constructor(
-    private dialogRef: MatDialogRef<CitaModalComponent>,
+    private dialogRef: MatDialogRef<CitaCompletadoModalComponent>,
     private tipocitaService: tipocitaService,
     private userService : UserService,
     private citaService : CitaService,
@@ -70,14 +70,14 @@ export class CitaModalComponent implements OnInit {
     if(this.cita != null && this.cita.idCita!>0)
     {
       this.citaService.editar(this.cita).subscribe(()=>{
-        return this.citaService.listarCitasPendientes().subscribe(data=>{
+        return this.citaService.listar().subscribe(data=>{
           this.citaService.citaActualizar.next(data);
         })
       })
     }
     else{
       this.citaService.registrar(this.cita).subscribe(()=>{
-        this.citaService.listarCitasPendientes().subscribe(data =>{
+        this.citaService.listar().subscribe(data =>{
           this.citaService.citaActualizar.next(data);
         })
       })

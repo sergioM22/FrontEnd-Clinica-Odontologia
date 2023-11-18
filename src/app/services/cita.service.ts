@@ -15,6 +15,15 @@ export class CitaService {
   listar(){
     return this.http.get<Cita[]>(this.url+"/");
   }
+  listarCitasPendientes(){
+    return this.http.get<Cita[]>(`${this.url}/obtenerCitasPorEstado/${1}`);
+  }
+  listarCitasEspera(){
+    return this.http.get<Cita[]>(`${this.url}/obtenerCitasPorEstado/${2}`);
+  }
+  listarCitasCompletados(){
+    return this.http.get<Cita[]>(`${this.url}/obtenerCitasPorEstado/${3}`);
+  }
   eliminar(id:number){
     return this.http.delete(`${this.url}/${id}`)
   }

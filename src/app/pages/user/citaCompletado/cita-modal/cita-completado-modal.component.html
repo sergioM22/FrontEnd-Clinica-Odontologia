@@ -1,0 +1,49 @@
+  <mat-form-field appearance="fill">
+    <mat-label>DNI</mat-label>
+    <input matInput placeholder="Dni" [(ngModel)]="cita.dni">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>PESO</mat-label>
+    <input matInput placeholder="Peso" [(ngModel)]="cita.peso">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Altura</mat-label>
+    <input matInput placeholder="Altura" [(ngModel)]="cita.altura">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Sexo</mat-label>
+    <input matInput placeholder="Sexo" [(ngModel)]="cita.sexo">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>fecha</mat-label>
+    <input matInput placeholder="Fecha" [(ngModel)]="cita.fecha">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>estado</mat-label>
+    <input matInput placeholder="Estado" [(ngModel)]="cita.estado">
+  </mat-form-field>
+  <!-- tipo cita -->
+  <mat-form-field appearance="fill">
+    <mat-label *ngIf="cita.tipocita">{{cita.tipocita.nombre}}</mat-label>
+    <mat-select matInput placeholder="Seleccione un Tipo de Cita" [(ngModel)]="cita.tipocita">
+      <mat-option *ngFor="let tc of tipocita" [value]="tc">
+        {{tc.nombre}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+<!-- usuario -->
+  <mat-form-field appearance="fill">
+    <mat-label *ngIf="cita.usuario">{{cita.usuario.nombre}}</mat-label>
+    <mat-select matInput placeholder="Seleccione un Usuario" [(ngModel)]="cita.usuario">
+      <mat-option *ngFor="let u of usuario" [value]="u">
+        {{u.nombre}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+    <button mat-button color="primary" (click)="aceptar()">
+    Aceptar
+    </button>
+    <button mat-button color="warm" (click)="cerrar()">
+    Cancelar
+    </button>
