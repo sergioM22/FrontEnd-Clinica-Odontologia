@@ -134,16 +134,12 @@ import { MatMenuModule } from '@angular/material/menu';
     CitaCliComponent,
     CitaCliDialogComponent,
     CitaCliModalComponent
-
-
-    SidebarCliComponent
- 
   ],
   imports: [
     MatGridListModule,
     MatButtonToggleModule,
     MatMenuModule,
-    
+
     ReactiveFormsModule,
     BrowserModule,
     AppRoutingModule,

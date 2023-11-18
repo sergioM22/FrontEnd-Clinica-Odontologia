@@ -71,7 +71,8 @@ export class ShowProductDetailsComponent implements OnInit {
   deleteProduct(productId) {
     this.productService.deleteProduct(productId).subscribe(
       (resp) => {
-        this.getAllProducts();
+        //this.getAllProducts();
+        window.location.reload();
       },
       (error:HttpErrorResponse) => {
         console.log(error);
