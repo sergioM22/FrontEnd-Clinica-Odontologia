@@ -45,6 +45,11 @@ export class LoginComponent implements OnInit {
           this.loginService.setUser(user);
           console.log(user);
 
+          /* ADMIN = Administrador
+             NORMAL = Medico
+             CLIENTE = Cliente
+          */
+
           if(this.loginService.getUserRole() == 'ADMIN'){
             //dashboard admin
             //window.location.href = '/admin';
@@ -52,10 +57,18 @@ export class LoginComponent implements OnInit {
             sessionStorage.setItem("username", this.loginData.username.trim());
             this.loginService.loginStatusSubjec.next(true);
           }
-          else if(this.loginService.getUserRole() == 'NORMAL'){
+          else if(this.loginService.getUserRole() == 'NORMAL'){ 
+           // else if(this.loginService.getUserRole() == 'MEDICO'){
             //user dashboard
             //window.location.href = '/user-dashboard';
             this.router.navigate(['user-dashboard/0']);
+            sessionStorage.setItem("username", this.loginData.username.trim());
+            this.loginService.loginStatusSubjec.next(true);
+          }
+          else if(this.loginService.getUserRole() == 'CLIENTE'){
+            //user dashboard
+            //window.location.href = '/user-dashboard';
+            this.router.navigate(['user-dasboard_cli']);
             sessionStorage.setItem("username", this.loginData.username.trim());
             this.loginService.loginStatusSubjec.next(true);
           }

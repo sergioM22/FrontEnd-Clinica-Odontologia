@@ -51,6 +51,11 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 //chat
  import { ChatComponent } from './pages/chat/chat.component';
+import { LoadCliComponent } from './pages/user_cli/load-cli/load-cli.component';
+import { UserDashboardCliComponent } from './pages/user_cli/user-dashboard-cli/user-dashboard-cli.component';
+import { WelcomeCliComponent } from './pages/user_cli/welcome-cli/welcome-cli.component';
+import { SidebarCliComponent } from './pages/user_cli/sidebar-cli/sidebar-cli.component';
+
 // import { UserComponent } from './pages/Chat/user/user.component';
 // import { MainComponent } from './pages/Chat/main/main.component';
 
@@ -114,6 +119,11 @@ import { AddNewProductComponent } from './Cart/add-new-product/add-new-product.c
     CitaComponent,
     ConfirmDialogComponent,
     CitaModalComponent,
+
+    LoadCliComponent,
+    UserDashboardCliComponent,
+    WelcomeCliComponent,
+    SidebarCliComponent
   ],
   imports: [
     MatGridListModule,
