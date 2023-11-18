@@ -9,6 +9,25 @@
       <button mat-list-item routerLink = "/user-dasboard_cli/profile">
         <mat-icon mat-list-icon>account_circle</mat-icon>Perfil
       </button>
+      <!-- SubMenu -->
+      <button [matMenuTriggerFor]="menu" mat-icon-button>
+        <mat-icon>menu</mat-icon> Carrito de Compras
+      </button>
+      <mat-menu #menu="matMenu">
+        <button routerLink="/home-card" mat-menu-item>
+          <mat-icon>home</mat-icon>
+          <span>Catalogo</span>
+        </button>
+        <button routerLink="/cart" mat-menu-item>
+          <mat-icon>home</mat-icon>
+          <span>Carta</span>
+        </button>
+        <button routerLink="/myOrders" mat-menu-item>
+          <mat-icon>home</mat-icon>
+          <span>Mis Productos</span>
+        </button>
+        <!-- Agrega más elementos del menú si es necesario -->
+      </mat-menu>
       <button mat-list-item routerLink = "/chat">
         <mat-icon mat-list-icon>chat</mat-icon>Asesoria Medica
       </button>
