@@ -82,6 +82,34 @@ const routes: Routes = [
         component : WelcomeComponent
       },
       {
+        path: "orderInformation",
+        component: OrderDetailsComponent,
+      },
+      {
+        path: "addNewProduct",
+        component: AddNewProductComponent,
+        //
+        data: { roles: ["Admin"] },
+        resolve: {
+          product: ProductResolveService,
+        },
+      },
+      { path: 'home-card', component: HomeComponentCard },
+      {
+        path: "showProductDetails",
+        component: ShowProductDetailsComponent,
+        
+        data: { roles: ["Admin"] },
+      },
+      {
+        path:'carrito',
+        component:CartComponent
+      },
+      {
+        path:"myOrders",
+        component: MyOrdersComponent,
+      },
+      {
         path:'categorias',
         component:ViewCategoriasComponent
       },
