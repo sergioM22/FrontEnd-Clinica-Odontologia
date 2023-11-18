@@ -58,10 +58,41 @@ import { SidebarCliComponent } from './pages/user_cli/sidebar-cli/sidebar-cli.co
 
 // import { UserComponent } from './pages/Chat/user/user.component';
 // import { MainComponent } from './pages/Chat/main/main.component';
+
+//cart
+import { MatGridListModule } from '@angular/material/grid-list';
+import { HomeComponentCard } from './Cart/home/home.component';
+import { HeaderComponent } from './Cart/header/header.component';
+import { ShowProductImagesDialogComponent } from './Cart/show-product-images-dialog/show-product-images-dialog.component';
+import { ShowProductDetailsComponent } from './Cart/show-product-details/show-product-details.component';
+import { ProductViewDetailsComponent } from './Cart/product-view-details/product-view-details.component';
+import { OrderDetailsComponent } from './Cart/order-details/order-details.component';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { OrderConfirmationComponent } from './Cart/order-confirmation/order-confirmation.component';
+import { MyOrdersComponent } from './Cart/my-orders/my-orders.component';
+import { ForbiddenComponent } from './Cart/forbidden/forbidden.component';
+import { CartComponent } from './Cart/cart/cart.component';
+import { BuyProductComponent } from './Cart/buy-product/buy-product.component';
+import { AddNewProductComponent } from './Cart/add-new-product/add-new-product.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
     ChatComponent,
+    //Cart
+    HomeComponentCard,
+    HeaderComponent,
+    ShowProductImagesDialogComponent,
+    ShowProductDetailsComponent,
+    ProductViewDetailsComponent,
+    OrderDetailsComponent,
+    OrderConfirmationComponent,
+    MyOrdersComponent,
+    ForbiddenComponent,
+    CartComponent,
+    BuyProductComponent,
+    AddNewProductComponent,
     // UserComponent,
     // MainComponent,
     NavbarComponent,
@@ -88,13 +119,16 @@ import { SidebarCliComponent } from './pages/user_cli/sidebar-cli/sidebar-cli.co
     CitaComponent,
     ConfirmDialogComponent,
     CitaModalComponent,
+
     LoadCliComponent,
     UserDashboardCliComponent,
     WelcomeCliComponent,
     SidebarCliComponent
-
   ],
   imports: [
+    MatGridListModule,
+    MatButtonToggleModule,
+
     ReactiveFormsModule,
     BrowserModule,
     AppRoutingModule,
