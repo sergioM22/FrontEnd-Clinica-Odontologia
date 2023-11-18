@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { UserService } from 'src/app/services/user.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { CategoriaService } from './../../../services/categoria.service';
+import { LoginService } from 'src/app/services/login.service';
 
 @Component({
   selector: 'app-sidebar-cli',
@@ -37,22 +38,28 @@ export class SidebarCliComponent implements OnInit {
     private router: Router,
     private chatService: ChatService,
     private userService: UserService,
+    public login:LoginService
   ) { }
 
   ngOnInit(): void {
-    console.log("Nombre Usuario:"+sessionStorage.getItem('username'))
+   // console.log("Nombre Usuario:"+sessionStorage.getItem('username'))
     let all = setInterval(() => {
 
       this.userService.getAll().subscribe((data) => {
-        console.log(data);
-        console.log(sessionStorage.getItem('chatId'))
-        console.log(sessionStorage.getItem('username'))
+    //    console.log(data);
+     //   console.log(sessionStorage.getItem('chatId'))
+     //   console.log(sessionStorage.getItem('username'))
         this.alluser = data;
-        console.log(this.alluser)
+    //    console.log(this.alluser)
       })
     }, 1000);
   }
 
+
+  public logout(){
+    this.login.logout();
+    window.location.reload();
+  }
   
   goToChat(username: any) {
     this.chatService.getChatByFirstUserNameAndSecondUserName(username, sessionStorage.getItem("username") ?? "").subscribe(
