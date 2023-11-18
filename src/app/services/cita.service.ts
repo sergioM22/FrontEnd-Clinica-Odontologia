@@ -22,7 +22,6 @@ export class CitaService {
     return this.http.put(this.url, cita);
   }
   registrar(cita: Cita){
-
     return this.http.post(this.url, cita);
   }
   listarPorId(id:number){

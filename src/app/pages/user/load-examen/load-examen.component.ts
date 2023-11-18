@@ -1,6 +1,7 @@
 import { ExamenService } from './../../../services/examen.service';
 import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
+import { LoginService } from 'src/app/services/login.service';
 
 @Component({
   selector: 'app-load-examen',
@@ -11,13 +12,16 @@ export class LoadExamenComponent implements OnInit {
 
   catId:any;
   examenes:any;
+  user:any = null;
 
   constructor(
     private route:ActivatedRoute,
-    private examenService:ExamenService
+    private examenService:ExamenService,
+    private loginService:LoginService
   ) { }
 
   ngOnInit(): void {
+    this.user = this.loginService.getUser();
    /*    this.route.params.subscribe((params) => {
         this.catId = params['catId'];
 

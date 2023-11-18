@@ -105,7 +105,8 @@ export class BuyProductComponent implements OnInit {
     this.productService.createTransaction(amount).subscribe(
       (response) => {
         console.log(response);
-        this.openTransactioModal(response, orderForm);
+        //this.openTransactioModal(response, orderForm);
+        this.processResponse(response, orderForm);
       },
       (error) => {
         console.log(error);

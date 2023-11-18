@@ -9,8 +9,8 @@
                       (ngSubmit)="addProduct(productForm)">
 
                     <mat-form-field appearance="outline"
-                                    class="w-100">
-                        <mat-label>Product Name</mat-label>
+                                    class="w-100" style="margin-right: 10px;">
+                        <mat-label>Nombre del producto</mat-label>
                         <input matInput
                                placeholder="Product Name"
                                [(ngModel)]="product.productName"
@@ -19,7 +19,7 @@
 
                     <mat-form-field appearance="outline"
                                     class="w-100">
-                        <mat-label>Product Description</mat-label>
+                        <mat-label>Descripcion del producto</mat-label>
                         <input matInput
                                placeholder="Product Description"
                                [(ngModel)]="product.productDescription"
@@ -27,8 +27,8 @@
                     </mat-form-field>
 
                     <mat-form-field appearance="outline"
-                                    class="w-100">
-                        <mat-label>Product Actual Price</mat-label>
+                                    class="w-100" style="margin-right: 10px;">
+                        <mat-label>Precio actual del producto</mat-label>
                         <input matInput
                                placeholder="Product Actual Price"
                                [(ngModel)]="product.productActualPrice"
@@ -37,7 +37,7 @@
 
                     <mat-form-field appearance="outline"
                                     class="w-100">
-                        <mat-label>Product Discounted Price</mat-label>
+                        <mat-label>Descuento</mat-label>
                         <input matInput
                                placeholder="Product Discounted Price"
                                [(ngModel)]="product.productDiscountedPrice"
@@ -48,10 +48,10 @@
                         <div align="end">
                         <button mat-stroked-button
                                 color="primary"
-                                style="margin-right: 3px;">Clear</button>
+                                style="margin-right: 3px;">Limpiar</button>
                         <button type="submit" *ngIf="isNewProduct"
                                 mat-stroked-button
-                                color="primary">Add Product</button>
+                                color="primary">Agregar</button>
                         <button type="submit" *ngIf="!isNewProduct"
                                 mat-stroked-button
                                 color="primary">Update Product</button>
@@ -66,10 +66,10 @@
                     <div class="dropzone">
                         <div class="text-wrapper">
                             <div class="centered">
-                                Drag and drop your file or
+                                Arrastra y suelta tu archivo o
                                 <a (click)="selectFile.click()"
-                                   class="browse-button">browse</a>
-                                a file
+                                   class="browse-button">busque</a>
+                                un archivo
                             </div>
 
                         </div>
