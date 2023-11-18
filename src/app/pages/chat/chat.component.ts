@@ -109,7 +109,7 @@ export class ChatComponent implements OnInit {
   }
 
   loadChatByEmail(event: string, event1: string) {
-    console.log(event, event1);
+   // console.log(event, event1);
     // For removing the previous chatId
     sessionStorage.removeItem("chatId");
 
@@ -118,7 +118,7 @@ export class ChatComponent implements OnInit {
       // console.log(data);
       this.chatData = data;
       this.chatId = this.chatData[0].chatId;
-      console.log(this.chatId);
+   //   console.log(this.chatId);
       sessionStorage.setItem('chatId', this.chatId)
 
 
@@ -129,7 +129,7 @@ export class ChatComponent implements OnInit {
           this.firstUserName = this.chatData.firstUserName;
 
           this.chatService.getAllMessagesByChatId(this.chatId).subscribe(data => {
-            console.log(data);
+       //     console.log(data);
             this.chatData = data;
             this.messageList = this.chatData;
           });
@@ -141,7 +141,7 @@ export class ChatComponent implements OnInit {
   }
 
   sendMessage() {
-    console.log(this.chatForm.value);
+   // console.log(this.chatForm.value);
 
     // This will call the update chat method when ever user send the message
     this.messageObj.replymessage = this.chatForm.value.replymessage;
@@ -149,12 +149,12 @@ export class ChatComponent implements OnInit {
     this.chatObj.chatId = this.chatId;
     this.messageObj.chat = this.chatObj;
     this.chatService.addMessageToChatRoom(this.messageObj).subscribe(data => {
-      console.log(data);
+  //    console.log(data);
       this.chatForm.reset();
 
       // for displaying the messageList by the chatId
       this.chatService.getAllMessagesByChatId(this.chatId).subscribe(data => {
-        console.log(data);
+  //      console.log(data);
         this.chatData = data;
         // console.log(this.chatData.messageList);console.log(JSON.stringify(this.chatData.messageList));
         this.messageList = this.chatData.messageList;
@@ -180,8 +180,8 @@ export class ChatComponent implements OnInit {
 
 
   goToChat(username: any) {
-    console.log("Secondname: "+username)
-    console.log("Firstname: "+sessionStorage.getItem('username'))
+   // console.log("Secondname: "+username)
+   // console.log("Firstname: "+sessionStorage.getItem('username'))
     this.chatService.getChatByFirstUserNameAndSecondUserName(username, sessionStorage.getItem('username')).subscribe(
       (data) => {
         this.chatId = data.chatId;
@@ -189,7 +189,7 @@ export class ChatComponent implements OnInit {
       },
       (error) => {
         if (error.status == 404) {
-          console.log("Generando nuevo chat");
+    //      console.log("Generando nuevo chat");
           this.chatObj.firstUserName = sessionStorage.getItem('username');
           this.chatObj.secondUserName = username;
           this.chatService.createChatRoom(this.chatObj).subscribe(

@@ -40,6 +40,8 @@ import { ProductResolveService } from './Cart/product-resolve.service';
 
 import { UserDashboardCliComponent } from './pages/user_cli/user-dashboard-cli/user-dashboard-cli.component';
 import { WelcomeCliComponent } from './pages/user_cli/welcome-cli/welcome-cli.component';
+import { ProfileCliComponent } from './pages/user_cli/profile-cli/profile-cli.component';
+import { CitaCliComponent } from './pages/user_cli/cita-cli/cita-cli.component';
 
 
 const routes: Routes = [
@@ -134,9 +136,17 @@ children: [
   {
   path:'',
   component:WelcomeCliComponent
+  },
+  {
+    path:'profile',
+    component:ProfileCliComponent
+  },
+  {
+    path:'citaCliente',
+    component:CitaCliComponent
   }
 ]
-  },
+  }, 
   {
     path:"start/:examenId",
     component:StartComponent,
