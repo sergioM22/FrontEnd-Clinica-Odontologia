@@ -42,6 +42,7 @@ import { UserDashboardCliComponent } from './pages/user_cli/user-dashboard-cli/u
 import { WelcomeCliComponent } from './pages/user_cli/welcome-cli/welcome-cli.component';
 import { ProfileCliComponent } from './pages/user_cli/profile-cli/profile-cli.component';
 import { CitaCliComponent } from './pages/user_cli/cita-cli/cita-cli.component';
+import { ForbiddenComponent } from './Cart/forbidden/forbidden.component';
 
 
 const routes: Routes = [
@@ -115,13 +116,17 @@ const routes: Routes = [
     canActivate:[NormalGuard],
     children : [
       {
+        path:'',
+        component: WelcomeComponent
+        },
+      {
         path:':catId',
         component:LoadExamenComponent
       },
       {
         path : 'citaspendientes',
         component : CitaComponent,
-        
+        pathMatch : 'full'
       },
       {
         path:'instrucciones/:examenId',
@@ -170,7 +175,7 @@ children: [
   {
     path: "productViewDetails",
     component: ProductViewDetailsComponent,
-    pathMatch : 'full'
+    resolve: { product: ProductResolveService },
   },
   {
     path: "buyProduct",
@@ -255,7 +260,8 @@ children: [
     component: MyOrdersComponent,
     
     data: { roles: ["User"] }
-  }
+  },
+  { path: "forbidden", component: ForbiddenComponent },
 ];
 
 @NgModule({
