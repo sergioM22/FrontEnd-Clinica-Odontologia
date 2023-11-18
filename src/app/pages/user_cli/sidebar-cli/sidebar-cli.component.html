@@ -32,13 +32,7 @@
         <mat-icon mat-list-icon>chat</mat-icon>Asesoria Medica
       </button>
       <button mat-list-item routerLink = "/user-dasboard_cli/citaCliente">
-        <mat-icon mat-list-icon>assignment_ind</mat-icon>Citas Agendadas
-      </button>
-      <button mat-list-item routerLink = "/user-dasboard_cli/citaCliente">
-        <mat-icon mat-list-icon>assignment</mat-icon>Citas En Espera
-      </button>
-      <button mat-list-item routerLink = "/user-dasboard_cli/citaCliente">
-        <mat-icon mat-list-icon>assignment_turned_in</mat-icon>Citas Finalizadas
+        <mat-icon mat-list-icon>assignment_ind</mat-icon>Mis citas
       </button>
       <button [routerLink] = "'/user-dashboard/'+c.categoriaId" mat-list-item *ngFor = "let c of categorias">
         <mat-icon mat-list-icon>account_circle</mat-icon> {{ c.titulo }}

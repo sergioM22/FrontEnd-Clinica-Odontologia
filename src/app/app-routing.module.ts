@@ -124,10 +124,16 @@ const routes: Routes = [
         path:'',
         component: WelcomeComponent
         },
+        { path: 'chat', component: ChatComponent },
+        {
+          path : 'citaspendientes', component : CitaComponent
+          
+        },
       {
-        path:':catId',
+        path:':profileM',
         component:LoadExamenComponent
       },
+      
       {
         path:'instrucciones/:examenId',
         component:InstruccionesComponent
