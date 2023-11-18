@@ -42,6 +42,7 @@ import { UserDashboardCliComponent } from './pages/user_cli/user-dashboard-cli/u
 import { WelcomeCliComponent } from './pages/user_cli/welcome-cli/welcome-cli.component';
 import { ProfileCliComponent } from './pages/user_cli/profile-cli/profile-cli.component';
 import { CitaCliComponent } from './pages/user_cli/cita-cli/cita-cli.component';
+import { ForbiddenComponent } from './Cart/forbidden/forbidden.component';
 
 import { MedicoGuard } from './services/medico.guard';
 
@@ -120,10 +121,13 @@ const routes: Routes = [
     canActivate:[MedicoGuard],
     children : [
       {
+        path:'',
+        component: WelcomeComponent
+        },
+      {
         path:':catId',
         component:LoadExamenComponent
       },
-      
       {
         path:'instrucciones/:examenId',
         component:InstruccionesComponent
@@ -143,6 +147,16 @@ children: [
     path:'profile',
     component:ProfileCliComponent
   },
+  { path: 'chat', component: ChatComponent },
+  { path: 'home-card', component: HomeComponentCard },
+  {
+    path:'carrito',
+    component:CartComponent
+  },
+  {
+    path:"myOrders",
+    component: MyOrdersComponent,
+  },
   {
     path:'citaCliente',
     component:CitaCliComponent
@@ -157,7 +171,7 @@ children: [
   //SERGIO YP 20231116 SHOPPING-CARD
   ,
   { path: 'header', component: HeaderComponent, pathMatch: 'full' },
-  { path: 'home-card', component: HomeComponentCard, pathMatch: 'full' },
+  
   {
     path: "showProductDetails",
     component: ShowProductDetailsComponent,
@@ -171,7 +185,7 @@ children: [
   {
     path: "productViewDetails",
     component: ProductViewDetailsComponent,
-    pathMatch : 'full'
+    resolve: { product: ProductResolveService },
   },
   {
     path: "buyProduct",
@@ -188,10 +202,7 @@ children: [
     path:"orderConfirm",
     component: OrderConfirmationComponent,
   },
-  {
-    path:"myOrders",
-    component: MyOrdersComponent,
-  },
+  
   {
     path: "addNewProduct",
     component: AddNewProductComponent,
@@ -256,7 +267,8 @@ children: [
     component: MyOrdersComponent,
     
     data: { roles: ["User"] }
-  }
+  },
+  { path: "forbidden", component: ForbiddenComponent },
 ];
 
 @NgModule({
