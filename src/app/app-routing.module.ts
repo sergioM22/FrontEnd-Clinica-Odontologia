@@ -43,6 +43,7 @@ import { WelcomeCliComponent } from './pages/user_cli/welcome-cli/welcome-cli.co
 import { ProfileCliComponent } from './pages/user_cli/profile-cli/profile-cli.component';
 import { CitaCliComponent } from './pages/user_cli/cita-cli/cita-cli.component';
 
+import { MedicoGuard } from './services/medico.guard';
 
 const routes: Routes = [
   {
@@ -61,7 +62,11 @@ const routes: Routes = [
     pathMatch : 'full'
   },
   { path: 'chat', component: ChatComponent, pathMatch: 'full' },
-  
+  {
+    path : 'citaspendientes',
+    component : CitaComponent,
+    pathMatch : 'full'
+  },
   {
     path:'admin',
     component:DashboardComponent,
@@ -112,17 +117,13 @@ const routes: Routes = [
   {
     path:'user-dashboard',
     component:UserDashboardComponent,
-    canActivate:[NormalGuard],
+    canActivate:[MedicoGuard],
     children : [
       {
         path:':catId',
         component:LoadExamenComponent
       },
-      {
-        path : 'citaspendientes',
-        component : CitaComponent,
-        
-      },
+      
       {
         path:'instrucciones/:examenId',
         component:InstruccionesComponent
