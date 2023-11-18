@@ -55,6 +55,10 @@ import { LoadCliComponent } from './pages/user_cli/load-cli/load-cli.component';
 import { UserDashboardCliComponent } from './pages/user_cli/user-dashboard-cli/user-dashboard-cli.component';
 import { WelcomeCliComponent } from './pages/user_cli/welcome-cli/welcome-cli.component';
 import { SidebarCliComponent } from './pages/user_cli/sidebar-cli/sidebar-cli.component';
+import { ProfileCliComponent } from './pages/user_cli/profile-cli/profile-cli.component';
+import { CitaCliComponent } from './pages/user_cli/cita-cli/cita-cli.component';
+import { CitaCliDialogComponent } from './pages/user_cli/cita-cli/cita-cli-dialog/cita-cli-dialog.component';
+import { CitaCliModalComponent } from './pages/user_cli/cita-cli/cita-cli-modal/cita-cli-modal.component';
 
 // import { UserComponent } from './pages/Chat/user/user.component';
 // import { MainComponent } from './pages/Chat/main/main.component';
@@ -123,7 +127,16 @@ import { AddNewProductComponent } from './Cart/add-new-product/add-new-product.c
     LoadCliComponent,
     UserDashboardCliComponent,
     WelcomeCliComponent,
+
+    SidebarCliComponent,
+    ProfileCliComponent,
+    CitaCliComponent,
+    CitaCliDialogComponent,
+    CitaCliModalComponent
+
+
     SidebarCliComponent
+ 
   ],
   imports: [
     MatGridListModule,
