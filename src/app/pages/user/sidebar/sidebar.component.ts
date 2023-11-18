@@ -5,6 +5,7 @@ import { ChatService } from 'src/app/services/chat.service';
 import { Chat } from 'src/app/model/chat';
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/services/user.service';
+import { LoginService } from 'src/app/services/login.service';
 
 @Component({
   selector: 'app-sidebar-user',
@@ -37,6 +38,7 @@ export class SidebarComponent implements OnInit {
     private router: Router,
     private chatService: ChatService,
     private userService: UserService,
+    public login:LoginService
   ) { }
 
   ngOnInit(): void {
@@ -51,6 +53,11 @@ export class SidebarComponent implements OnInit {
         console.log(this.alluser)
       })
     }, 1000);
+  }
+
+  public logout(){
+    this.login.logout();
+    window.location.reload();
   }
 
   goToChat(username: any) {

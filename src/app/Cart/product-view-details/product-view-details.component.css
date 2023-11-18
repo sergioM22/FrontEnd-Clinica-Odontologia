@@ -3,7 +3,11 @@
 }
 
 .image-container {
-    height: 500px;
+    width: 70%;
+    justify-content: center;
+    margin-top: 20px;
+    margin-left: 750px;
+    margin-bottom: 50px;
     position: relative;
 }
 
