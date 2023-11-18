@@ -7,19 +7,19 @@
       </div>
     </div>
     <button mat-list-item routerLink = "/home-card">
-      <mat-icon mat-list-icon>quiz</mat-icon>Carrito de COmpras
+      <mat-icon>shopping_cart</mat-icon>Carrito de Compras
     </button>
     <button mat-list-item routerLink = "/chat">
-      <mat-icon mat-list-icon>quiz</mat-icon>Asesoria Medica
+      <mat-icon>assignment</mat-icon>Asesoria Medica
+    </button>
+    <button mat-list-item routerLink = "/user-dashboard/citaspendientes">
+      <mat-icon>assignment</mat-icon>Citas Agendadas
     </button>
     <button mat-list-item routerLink = "/citaspendientes">
-      <mat-icon mat-list-icon>quiz</mat-icon>Citas Agendadas
+      <mat-icon>assignment</mat-icon>Citas En Espera
     </button>
     <button mat-list-item routerLink = "/citaspendientes">
-      <mat-icon mat-list-icon>quiz</mat-icon>Citas En Espera
-    </button>
-    <button mat-list-item routerLink = "/citaspendientes">
-      <mat-icon mat-list-icon>quiz</mat-icon>Citas Finalizadas
+      <mat-icon>assignment</mat-icon>Citas Finalizadas
     </button>
     <button [routerLink] = "'/user-dashboard/'+c.categoriaId" mat-list-item *ngFor = "let c of categorias">
       <mat-icon mat-list-icon>account_circle</mat-icon> {{ c.titulo }}

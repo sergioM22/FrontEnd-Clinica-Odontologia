@@ -8,7 +8,7 @@
       <div class="col-md-4 col-xl-2 chat order-last order-lg-2">
         <div class="card mb-sm-3 mb-md-0 contacts_card">
           <div class="card-header">
-            <h1 class="chat-list-title">All User</h1>
+            <h1 class="chat-list-title">Usuarios</h1>
           </div>
           <div class="card-body contacts_body ">
             <ul class="contacts chatList" *ngFor="let presentation of alluser">
@@ -52,7 +52,7 @@
               <div class="user_info">
                 <span *ngIf="secondUserName!=senderCheck">{{secondUserName}}</span>
                 <span *ngIf="secondUserName==senderCheck">{{firstUserName}}</span>
-                <p>Message</p>
+                <p>Mensaje</p>
               </div>
               <div class="video_cam">
               </div>
@@ -102,7 +102,7 @@
                 <div class="input-group-append">
                   <span class="input-group-text attach_btn"></span>
                 </div>
-                <textarea name="" class="form-control type_msg" placeholder="Type your message..."
+                <textarea name="" class="form-control type_msg" placeholder="Ingrese su mensaje..."
                   formControlName="replymessage" (keyup.enter)="sendMessage()"></textarea>
                 <div class="input-group-append">
                   <button mat-raised-button class="input-group-text send_btn" (click)="sendMessage()">
@@ -119,7 +119,7 @@
       <div class="col-md-4 col-xl-2 chat order-md-2 order-lg-5">
         <div class="card mb-sm-3 mb-md-0 contacts_card">
           <div class="card-header">
-            <h1 class="chat-list-title">Chat List</h1>
+            <h1 class="chat-list-title">Lista de chats</h1>
           </div>
           <div class="card-body contacts_body ">
             <ul class="contacts chatList" *ngFor="let chats of chatList">

@@ -132,7 +132,7 @@ import { AddNewProductComponent } from './Cart/add-new-product/add-new-product.c
     ProfileCliComponent,
     CitaCliComponent,
     CitaCliDialogComponent,
-    CitaCliModalComponent
+    CitaCliModalComponent,
 
 
     SidebarCliComponent
