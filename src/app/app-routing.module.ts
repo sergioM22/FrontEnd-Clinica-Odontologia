@@ -61,11 +61,7 @@ const routes: Routes = [
     pathMatch : 'full'
   },
   { path: 'chat', component: ChatComponent, pathMatch: 'full' },
-  {
-    path : 'citaspendientes',
-    component : CitaComponent,
-    pathMatch : 'full'
-  },
+  
   {
     path:'admin',
     component:DashboardComponent,
@@ -121,6 +117,11 @@ const routes: Routes = [
       {
         path:':catId',
         component:LoadExamenComponent
+      },
+      {
+        path : 'citaspendientes',
+        component : CitaComponent,
+        
       },
       {
         path:'instrucciones/:examenId',

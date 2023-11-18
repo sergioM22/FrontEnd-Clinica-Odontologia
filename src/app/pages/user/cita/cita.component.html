@@ -1,4 +1,5 @@
- <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+<mat-card>
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
   
     <!-- Position Column -->
     <ng-container matColumnDef="idCita">
@@ -66,7 +67,7 @@
   </table>
 
   <button mat-button color="primary"  (click)="openModal()" style="margin-left: 1150px;">
-    <mat-icon>persona_add</mat-icon>Agregar Médico
+    <mat-icon>note_add</mat-icon> Agregar Médico
   </button>
-
+</mat-card>
   
