@@ -75,6 +75,7 @@ import { CartComponent } from './Cart/cart/cart.component';
 import { BuyProductComponent } from './Cart/buy-product/buy-product.component';
 import { AddNewProductComponent } from './Cart/add-new-product/add-new-product.component';
 
+import { MatMenuModule } from '@angular/material/menu';
 
 @NgModule({
   declarations: [
@@ -128,7 +129,8 @@ import { AddNewProductComponent } from './Cart/add-new-product/add-new-product.c
   imports: [
     MatGridListModule,
     MatButtonToggleModule,
-
+    MatMenuModule,
+    
     ReactiveFormsModule,
     BrowserModule,
     AppRoutingModule,

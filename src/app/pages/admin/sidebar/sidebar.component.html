@@ -4,6 +4,29 @@
     <button routerLink = "/admin" mat-list-item>
       <mat-icon mat-list-icon>home</mat-icon> Inicio
     </button>
+    <button [matMenuTriggerFor]="menu" mat-icon-button>
+      <mat-icon>menu</mat-icon> Carrito de Compras
+    </button>
+    
+    <mat-menu #menu="matMenu">
+      <button routerLink="/home-card" mat-menu-item>
+        <mat-icon>home</mat-icon>
+        <span>Catalogo</span>
+      </button>
+      <button routerLink="/addNewProduct" mat-menu-item>
+        <mat-icon>home</mat-icon>
+        <span>Nuevo Producto</span>
+      </button>
+      <button routerLink="/showProductDetails" mat-menu-item>
+        <mat-icon>home</mat-icon>
+        <span>Mostrar Detalles</span>
+      </button>
+      <button routerLink="/orderInformation" mat-menu-item>
+        <mat-icon>home</mat-icon>
+        <span>Ordenes</span>
+      </button>
+      <!-- Agrega más elementos del menú si es necesario -->
+    </mat-menu>
     <button mat-list-item routerLink = "/admin/profile">
       <mat-icon mat-list-icon>account_circle</mat-icon>Perfil
     </button>
