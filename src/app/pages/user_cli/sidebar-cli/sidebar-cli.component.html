@@ -11,24 +11,24 @@
       </button>
       <!-- SubMenu -->
       <button [matMenuTriggerFor]="menu" mat-icon-button>
-        <mat-icon>menu</mat-icon> Carrito de Compras
+        <mat-icon>shopping_cart</mat-icon>Carrito de Compras
       </button>
       <mat-menu #menu="matMenu">
-        <button routerLink="/home-card" mat-menu-item>
+        <button routerLink="/user-dasboard_cli/home-card" mat-menu-item>
           <mat-icon>home</mat-icon>
           <span>Catalogo</span>
         </button>
-        <button routerLink="/cart" mat-menu-item>
+        <button routerLink="/user-dasboard_cli/carrito" mat-menu-item>
           <mat-icon>home</mat-icon>
           <span>Carta</span>
         </button>
-        <button routerLink="/myOrders" mat-menu-item>
+        <button routerLink="/user-dasboard_cli/myOrders" mat-menu-item>
           <mat-icon>home</mat-icon>
           <span>Mis Productos</span>
         </button>
         <!-- Agrega más elementos del menú si es necesario -->
       </mat-menu>
-      <button mat-list-item routerLink = "/chat">
+      <button mat-list-item routerLink = "/user-dasboard_cli/chat">
         <mat-icon mat-list-icon>chat</mat-icon>Asesoria Medica
       </button>
       <button mat-list-item routerLink = "/user-dasboard_cli/citaCliente">

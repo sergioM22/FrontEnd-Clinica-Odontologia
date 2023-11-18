@@ -44,6 +44,7 @@ import { ProfileCliComponent } from './pages/user_cli/profile-cli/profile-cli.co
 import { CitaCliComponent } from './pages/user_cli/cita-cli/cita-cli.component';
 import { ForbiddenComponent } from './Cart/forbidden/forbidden.component';
 
+import { MedicoGuard } from './services/medico.guard';
 
 const routes: Routes = [
   {
@@ -62,7 +63,11 @@ const routes: Routes = [
     pathMatch : 'full'
   },
   { path: 'chat', component: ChatComponent, pathMatch: 'full' },
-  
+  {
+    path : 'citaspendientes',
+    component : CitaComponent,
+    pathMatch : 'full'
+  },
   {
     path:'admin',
     component:DashboardComponent,
@@ -113,7 +118,7 @@ const routes: Routes = [
   {
     path:'user-dashboard',
     component:UserDashboardComponent,
-    canActivate:[NormalGuard],
+    canActivate:[MedicoGuard],
     children : [
       {
         path:'',
@@ -122,11 +127,6 @@ const routes: Routes = [
       {
         path:':catId',
         component:LoadExamenComponent
-      },
-      {
-        path : 'citaspendientes',
-        component : CitaComponent,
-        pathMatch : 'full'
       },
       {
         path:'instrucciones/:examenId',
@@ -147,6 +147,16 @@ children: [
     path:'profile',
     component:ProfileCliComponent
   },
+  { path: 'chat', component: ChatComponent },
+  { path: 'home-card', component: HomeComponentCard },
+  {
+    path:'carrito',
+    component:CartComponent
+  },
+  {
+    path:"myOrders",
+    component: MyOrdersComponent,
+  },
   {
     path:'citaCliente',
     component:CitaCliComponent
@@ -161,7 +171,7 @@ children: [
   //SERGIO YP 20231116 SHOPPING-CARD
   ,
   { path: 'header', component: HeaderComponent, pathMatch: 'full' },
-  { path: 'home-card', component: HomeComponentCard, pathMatch: 'full' },
+  
   {
     path: "showProductDetails",
     component: ShowProductDetailsComponent,
@@ -192,10 +202,7 @@ children: [
     path:"orderConfirm",
     component: OrderConfirmationComponent,
   },
-  {
-    path:"myOrders",
-    component: MyOrdersComponent,
-  },
+  
   {
     path: "addNewProduct",
     component: AddNewProductComponent,

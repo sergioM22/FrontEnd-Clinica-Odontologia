@@ -19,12 +19,12 @@ html {
 .chat {
     margin-top: 1rem;
     margin-bottom: auto;
-
+   
 }
 
 .card {
     height: 550px;
-    width: 500px;
+    width: 400px;
     margin-left: 5px;
     margin-right: 5px;
     border-radius: 15px !important;
