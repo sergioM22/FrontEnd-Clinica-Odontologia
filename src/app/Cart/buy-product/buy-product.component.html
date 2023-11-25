@@ -7,8 +7,8 @@
                       (ngSubmit)="createTransactionAndPlaceOrder(orderForm)">
 
                     <mat-form-field appearance="outline"
-                                    class="w-100">
-                        <mat-label>Full name</mat-label>
+                                    class="w-100" style="margin-right: 15px;">
+                        <mat-label>Nombre</mat-label>
                         <input matInput
                                placeholder="Full name"
                                [(ngModel)]="orderDetails.fullName"
@@ -16,8 +16,8 @@
                     </mat-form-field>
 
                     <mat-form-field appearance="outline"
-                                    class="w-100">
-                        <mat-label>Full address</mat-label>
+                                    class="w-100" style="margin-right: 15px;">
+                        <mat-label>Dirección</mat-label>
                         <input matInput
                                placeholder="Full address"
                                [(ngModel)]="orderDetails.fullAddress"
@@ -25,8 +25,8 @@
                     </mat-form-field>
 
                     <mat-form-field appearance="outline"
-                                    class="w-100">
-                        <mat-label>Contact number</mat-label>
+                                    class="w-100" style="margin-right: 15px;">
+                        <mat-label>Número Cont.</mat-label>
                         <input matInput
                                placeholder="Contact number"
                                [(ngModel)]="orderDetails.contactNumber"
@@ -35,7 +35,7 @@
 
                     <mat-form-field appearance="outline"
                                     class="w-100">
-                        <mat-label>Alternate contact number</mat-label>
+                        <mat-label>Número Cont. Alternativo</mat-label>
                         <input matInput
                                placeholder="Alternate contact number"
                                [(ngModel)]="orderDetails.alternateContactNumber"
@@ -43,7 +43,7 @@
                     </mat-form-field>
 
                     <div align="right">
-                        <button type="submit" mat-stroked-button color="primary">Place Order</button>
+                        <button type="submit" mat-stroked-button color="primary">Realizar pedido</button>
                     </div>
                 </form>
 
@@ -52,17 +52,17 @@
                 <table class="table">
                     <thead class="thead">
                         <tr>
-                            <th>Name</th>
-                            <th>Amount</th>
-                            <th>Quantity</th>
+                            <th style="margin-right: 15px;">Nombre</th>
+                            <th style="margin-right: 15px;">Cantidad</th>
+                            <th style="margin-right: 15px;">Cantidad</th>
                             <th>Total</th>
                         </tr>
                     </thead>
                     <tbody class="tbody">
                         <tr *ngFor="let product of productDetails">
-                            <td>{{product.productName}}</td>
-                            <td>{{product.productDiscountedPrice}}</td>
-                            <td>
+                            <td style="margin-right: 15px;">{{product.productName}}</td>
+                            <td style="margin-right: 15px;">{{product.productDiscountedPrice}}</td>
+                            <td style="margin-right: 15px;">
                                 <select 
                                 #quantity
                                 class="form-select"
