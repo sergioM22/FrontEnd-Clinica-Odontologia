@@ -80,8 +80,61 @@ const routes: Routes = [
         component:ProfileComponent
       },
       {
+        path:'carrito',
+        component:HomeComponentCard
+      },
+      {
+        path: "addNewProduct",
+        component: AddNewProductComponent,
+        //
+        data: { roles: ["Admin"] },
+        resolve: {
+          product: ProductResolveService,
+        },
+      },
+      {
+        path: "showProductDetails",
+        component: ShowProductDetailsComponent,
+        
+        data: { roles: ["Admin"] },
+      },
+      {
+        path: "orderInformation",
+        component: OrderDetailsComponent,
+        
+        data: { roles: ["Admin"] },
+      },
+      {
         path : '',
         component : WelcomeComponent
+      },
+      {
+        path: "orderInformation",
+        component: OrderDetailsComponent,
+      },
+      {
+        path: "addNewProduct",
+        component: AddNewProductComponent,
+        //
+        data: { roles: ["Admin"] },
+        resolve: {
+          product: ProductResolveService,
+        },
+      },
+      { path: 'home-card', component: HomeComponentCard },
+      {
+        path: "showProductDetails",
+        component: ShowProductDetailsComponent,
+        
+        data: { roles: ["Admin"] },
+      },
+      {
+        path:'carrito',
+        component:CartComponent
+      },
+      {
+        path:"myOrders",
+        component: MyOrdersComponent,
       },
       {
         path:'categorias',
